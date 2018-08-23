@@ -1,0 +1,18 @@
+table{
+    height: 30%;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+table tr td.cor2{
+    background-color: #f7dc5a;
+    padding: 5px;
+    width: 50%;
+    text-align: center;    
+}
+table tr th.cor1{
+    background-color: #5a9ef7;
+    padding: 5px;
+    text-align: left;
+    color: #ffffff;
+    
+}
