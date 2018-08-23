@@ -1,6 +1,5 @@
 <?php  
 echo "<link rel='stylesheet' type='text/css' href='css/app.css' />";
-setlocale(LC_MONETARY,'pt_br');
 //nao mistura html com php
 //variavel super global: $_GET['nome'] -> array associativo, cada indice tem um nome
 //varivave super global: $_POST['nome'] -> array associativo, cada indice tem um nome
@@ -11,7 +10,7 @@ setlocale(LC_MONETARY,'pt_br');
         <button>enviar</button>
     </form>"; 
     $nome = (isset($_POST['nome'])) ? $_POST['nome'] : NULL; //if inline
-    //daqui para cima é aula
+    //daqui para cima é da aula
     $arrayMis = array( //array associativo ou dicionario
         'Normal' => $nome,
         'Caixa alta' => strtoupper($nome),
