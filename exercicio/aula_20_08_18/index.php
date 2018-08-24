@@ -1,0 +1,11 @@
+<?php
+if(!file_exists("css")){
+    if(!file_exists("js")){
+        if(!file_exists("imagens")){
+            mkdir("js");
+            mkdir("css");
+            mkdir("imagens");
+        }
+    }
+}
+?>
