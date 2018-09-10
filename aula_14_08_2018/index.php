@@ -15,19 +15,20 @@ echo "<link rel='stylesheet' type='text/css' href='css/app.css' />";
         'Normal' => $nome,
         'Caixa alta' => strtoupper($nome),
         'Caixa baixa' => strtolower($nome),
-	'Primera maiuscula' => ucfirst($nome),
+	    'Primera maiuscula' => ucfirst($nome),
         'Tamanho' => strlen($nome),
         'Inverso' => strrev($nome),
         'Criptografado em md5 ' => md5($nome),
-	'Criptografado em crypt' => crypt($nome),
-	'Criptografoado em sha1' => sha1($nome),
+	    'Criptografado em crypt' => crypt($nome),
+	    'Criptografoado em sha1' => sha1($nome),
     );
 	$texto = "seja bem vindo! USUARIO";
 	$subs = str_replace("USUARIO",$nome,$texto); 	
 	echo $subs;
 ?>
 <table>
-    <?php foreach($arrayMis as $key => $value){?>
+    <?php 
+    foreach($arrayMis as $key => $value){?>
         <tr>
             <th class="cor1"><?php echo $key.":"?></th>
             <td class="cor2"><?php echo $value?></td>
