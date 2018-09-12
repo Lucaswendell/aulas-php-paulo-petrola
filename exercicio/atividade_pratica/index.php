@@ -1,4 +1,5 @@
 <?php
+if(file_exists("cabecalho.php") && file_exists("rodape.php")){
 include_once("cabecalho.php");
 /* 
     Atividade de PHP    
@@ -12,34 +13,36 @@ include_once("cabecalho.php");
         8 - Somente os campos nome mensagem devem ser obrigatórios para consguir fazer o envio.
 */
 echo 
-'   
-<div class="container" style=" margin-top: 10px; padding: 100px; border-radius: 10px;">
-<div class="row">
-<div class="col">
-<form  action="processa.php" enctype="multipart/form-data" method="post">
-    <div class="row">
-    <div class="col">
-        <label for="">Nome do usuario:</label>
-        <input type="text" name="nome" class="form-control"/>
+"  
+<div id='ele'></div>
+<div class='container' style=' margin-top: 10px; padding: 100px; border-radius: 10px;'>
+<div class='row'>
+<div class='col'>
+<form  action='processa.php' enctype='multipart/form-data' method='post'>
+    <div class='row'>
+    <div class='col'>
+        <label for=''>Nome do usuario:</label>
+        <input type='text' name='nome' class='form-control' />
     </div>
-    
-    <div class="col">
-        <label for="">Mensagem:</label>
-        <textarea name="mensagem" row="50" col="50" class="form-control"></textarea>
+    <div class='col'>
+        <label for=''>Mensagem:</label>
+        <textarea name='mensagem' row='50' col='50' class='form-control'></textarea>
     </div>
     </div>
-    <div class="form-group">
-        <label for="">Imagem de perfil:</label><br /><br />
-        <input multiple type="file" name="perfil" class="form-control-file"/><br />
-        <input type="submit" value="enviar" class="btn btn-primary"/>
+    <div class='form-group'>
+        <label for=''>Imagem de perfil:</label><br /><br />
+        <input multiple type='file' name='perfil' class='form-control-file'/><br />
+        <input type='submit' value='enviar' class='btn btn-primary'/>
     </div>
     </form>
     </div>
     </div>
     </div>
 
-'
-;
+";
 include_once("rodape.php");
+}else{
+    echo "<h4>Arquivo nao encontrado</h4>";
+}
 ?>
 
