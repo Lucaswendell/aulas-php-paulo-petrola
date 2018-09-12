@@ -25,7 +25,7 @@
         public function __destruct(){
 
         }
-        public function veri($login,$senha){
+        public function veri($login, $senha){
             if($login == "admin" && $senha == "qwe123"){
                 return true;
             }else{

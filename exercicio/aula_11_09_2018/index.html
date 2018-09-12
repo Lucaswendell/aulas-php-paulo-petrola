@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Autenticar user</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">  
+    </head>
+    <body>
+        <form action='#' method='post'>
+            <label for='usr'>User: </label> <input type='text' name='usr' id='usr'><br /> <br />
+            <label for='pass'>Password</label> <input type='password' name='pass' id='pass'>
+            <input type='submit' value='Submit' id='btn'>
+        </form>  
+        <div id="resu"></div>
+    </body>
+    <script src="ajax.js"></script>
+    <script>
+        document.getElementsByTagName("form")[0].onkeyup=function(){
+            var ele = document.getElementById("resu");
+            var usr = document.getElementById('usr').value;
+            var pass = document.getElementById('pass').value;
+              requisitarArquivo(ele, usr, pass);
+        };
+        
+
+    </script>
+</html>
+<!-- /* formulario de login(igual ao da aula passada) 
+    *O.O
+    *Nao é para usar mais de uma pagina index, ou seja, o conteudo tem que ser carregado na pagina index
+*/ -->
