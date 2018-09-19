@@ -13,31 +13,55 @@
             return $this->usr;
         }
         public function setUsr($u){
-            $this->usr=$u;
+            $u = strtolower($u);
+            $u = addslashes($u);
+            if(strlen($u) < 5){
+                echo "<script>alert('Usuário com caractere menor que 5');
+                history.back();
+                </script>";
+                exit();
+            }else{
+                $this->usr=$u;
+            }
         }
         public function getPass(){
             return $this->pass;
         }
         public function setPass($p){
-            $this->pass=$p;
+            if(strlen($p) < 8){
+                echo "<script>alert('Senha com no minimo 8 caracteres');
+                history.back();
+                </script>";
+                exit();
+            }else{
+                $this->pass=$p;
+            } 
         }
         public function getPass2(){
             return $this->pass2;
         }
         public function setPass2($p){
-            $this->pass2=$p;
+            if(strlen($p) < 8){
+                echo "<script>alert('Senha com no minimo 8 caracteres');
+                history.back();
+                </script>";
+                exit();
+            }else{
+                $this->pass2=$p;
+            }
         }
         public function getEmail(){
             return $this->email;
         }
         public function setEmail($e){
+            $e = srttolower($e);
             $this->email=$e;
         }
         public function getImage(){
             return $this->image;
         }
         public function setImage($i){
-            $this->image=$i;
+                $this->image=$i;
         }
         public function getDate(){
             return $this->date;
@@ -49,7 +73,14 @@
             return $this->sexo;
         }
         public function setSexo($s){
-            $this->sexo=$s;
+            if($s != "M" || $s != "F"){
+                echo "<script>alert('Deu erro na imagem');
+                history.back();
+                </script>";
+                exit();
+            }else{
+                $this->sexo=$s;
+            }
         }
         //metodo para verificar senha
         public function senha(){
@@ -63,29 +94,32 @@
         public function criarUser(){
             if(!file_exists($this->usr)){
                 mkdir("../$this->usr",0777, true);
+                $arquivo = fopen("../$this->usr/$this->usr.txt","a");
+                fwrite($arquivo,"user: $this->usr\nsenha: $this->pass\nE-email: $this->email\ndata: $this->date\nsexo: $this->sexo");
+                fclose($arquivo);
+                return true;
+            }else{
+                return false;
             }
-            $arquivo = fopen("../$this->usr/$this->usr.txt","a");
-            fwrite($arquivo,"user: $this->usr\n");
-            fwrite($arquivo, "pass: $this->pass\n");
-            fwrite($arquivo,"date: $this->date\n");
-            fwrite($arquivo,"email: $this->email\n");
-            fwrite($arquivo, "sexo: $this->sexo\n");
-            fclose($arquivo);
+            
         }
         //criar imagem
         public function criarImg(){
             $ext = $this->image['type'];
             switch($ext){
-                case "image/jpg" || "image/jpeg":
+                case "image/jpg":
                     $ext = ".jpg";
+                    break; 
+                case "image/jpeg":
+                    $ext = ".jpeg";
                     break;
                 case "image/png":
                     $ext = ".png";
                     break;
                 default:
-                    echo "Acho que nao ta no padrao.";
+                    echo "Acho que nao tá no padrão.";
             }
-            move_uploaded_file($this->image['tmp_name'],"$this->usr/$this->usr$ext");
+            move_uploaded_file($this->image['tmp_name'],"../$this->usr/$this->usr$ext");
         }
     }
 ?>

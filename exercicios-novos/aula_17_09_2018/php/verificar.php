@@ -29,12 +29,17 @@
             history.back();
             </script>';
         }else{
-            $veri->criarUser();
-            $veri->criarImg();
-            echo "<script>alert('usuario cadastrado com sucesso');
+            if($veri->criarUser()){
+                echo 
+                "<script>alert('usuário cadastrado com sucesso.');
+                history.back();
+                </script>";
+            }else{
+                echo "<script>alert('Usuário já cadastrado.');
                 history.back();
             </script>";
+            }
+            $veri->criarImg();  
         }
     }
-
 ?>
