@@ -9,26 +9,28 @@ function verificarForm(event){
     var agree = document.getElementById("agree").checked;
     var date = document.getElementById("date").value;
     var erro=0;
-    var arrays = new Array();
     var arraye = new Array();
     //senha
     if(pass1 == ""){
-        arrays.push("Campo senha vazio")
+        document.getElementById("pass1S").innerHTML = "campo vazio"; 
         erro++;
-    }
-    if(pass1.length < 8){  
-        arrays.push("Senha com no minimo 8 caracteres");
-        erro++;
+    }else{
+        document.getElementById("pass1S").innerHTML = ""; 
+
     }
     if(pass1 != pass2){
         document.getElementById("pass2S").innerHTML = "Senhas diferentes";
         erro++;
     }
-    document.getElementById("pass1S").innerHTML = arrays; 
     //usr
     if(urs == ""){
         document.getElementById("usrS").innerHTML = "Campo usuario vazio";
-        erro++
+        erro++;
+    }else if(urs.length < 5){
+        document.getElementById("usrS").innerHTML = "Usuário com no minimo 5 caracteres";
+        erro ++;
+    }else{
+        document.getElementById("usrS").innerHTML = "";
     }
     //check
     if(!agree){
@@ -67,3 +69,26 @@ function verificarForm(event){
         return true;
     }
 }   
+function senhaCaractere(){
+    var span = document.getElementById("pass1S");
+    var pass1 = document.getElementById("pass");
+    if(pass1.value.length < 8){  
+        span.innerHTML = "senha com no minimo 8 caracteres. Falta "+(8-pass1.value.length)+" caracteres";
+        pass1.style.borderColor = "#ff0000";
+    }else{
+        span.innerHTML = "";
+        pass1.style.borderColor = "#02fc2c";
+    }
+}
+function igualSenha(){
+    var span2 = document.getElementById("pass2S");
+    var pass1 = document.getElementById("pass").value;
+    var pass2 = document.getElementById("pass2");
+    if(pass1 !== pass2.value){
+        span2.innerHTML = "senhas diferentes";
+        pass2.style.borderColor = "#ff0000";
+    }else{
+        span2.innerHTML = "";
+        pass2.style.borderColor = "#02fc2c";
+    }
+}

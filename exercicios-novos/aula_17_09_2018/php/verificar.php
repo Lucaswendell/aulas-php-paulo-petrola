@@ -2,6 +2,11 @@
     if(isset($_POST)){
         if(file_exists("Cadastrar.class.php")){
             require_once("Cadastrar.class.php");
+            echo "
+            <body>
+            <link rel='stylesheet' href='../css/sweetalert2.min.css'>
+            <script src='../js/sweetalert2.min.js'></script>
+            </body>";
         }else{
             echo "<h4 style='text-align: center; color:#ff0000; font-size: 40px;'>Arquivo não encontrado</h4>";
         }
@@ -26,17 +31,28 @@
             echo 
             '<script>
             alert("Senha incorreta");
-            history.back();
             </script>';
         }else{
             if($veri->criarUser()){
                 echo 
-                "<script>alert('usuário cadastrado com sucesso.');
-                history.back();
+                "<script>swal({
+                    text: 'usuário cadastrado com sucesso.',
+                    type: 'success'
+                }).then((result) => {
+                   if(result.value){
+                    history.back(); 
+                   }   
+                });
                 </script>";
             }else{
-                echo "<script>alert('Usuário já cadastrado.');
-                history.back();
+                echo "<script>swal({
+                    text: 'Usuário já cadastrado.',
+                    type:'error'
+                }).then((result)=>{
+                    if(result.value){
+                        history.back();
+                    }
+                });
             </script>";
             }
             $veri->criarImg();  

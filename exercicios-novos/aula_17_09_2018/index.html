@@ -17,28 +17,32 @@
             <div class="container">
                 <div class="box">
                     <div class="form-group">
-                    <label for="usr">Usuário: </label><br />
-                    <input type="text" class="form-control" name="usr" id="usr" required/><span class="erro" id="usrS"></span>
-                    <br />
-                    <label for="pass">Senha: </label><br />
-                    <input type="password" class="form-control" name="pass" id="pass" required/><span class="erro" id="pass1S"></span><br
-                    />
-                    <label for="pass2">Confirme a senha: </label><br />
-                </div>
-                    <input type="password" class="form-control" id="pass2" name="pass2" required/><span class="erro" id="pass2S"></span><br
-                    />
+                        <label for="usr">Usuário: </label><br />
+                        <input type="text" class="form-control" name="usr" id="usr" placeholder="Digite o nome do usuário" required/><span
+                            class="erro" id="usrS"></span>
+                        <br />
+                        <label for="pass">Senha: </label><br />
+                        <input type="password" class="form-control" onkeyup="senhaCaractere();"  placeholder="Digite a sua senha" name="pass" id="pass"
+                            required/><span class="erro" id="pass1S"></span><br />
+                        <label for="pass2">Confirme a senha: </label><br />
+                    </div>
+                    <input type="password" onkeyup="igualSenha();" placeholder="Confirme sua senha" class="form-control" id="pass2" name="pass2"
+                        required/><span class="erro" id="pass2S"></span><br />
                     <label for="email">E-mail: </label><br />
-                    <input type="email" name="email" class="form-control" id="email" required/><span class="erro" id="emailS"></span><br
-                    />
-                    <label>Sexo:</label><br/><span class="erro" id="sexoS"></span><br />
+                    <input type="email" name="email" placeholder="Digite seu e-mail" class="form-control" id="email" required/><span
+                        class="erro" id="emailS"></span><br/>
+                    <label>Sexo:</label><span class="erro" id="sexoS"></span><br />
                     <input type="radio" id="sexM" name="sexo" value="M" required/> <label for="sexM"> Masculino</label>
                     <input type="radio" id="sexF" name="sexo" value="F" /> <label for="sexF"> Feminino</label><br />
                     <span class="erro" id="dateS"></span><br />
                     <label for="date">Data de nascimento:</label>
                     <input type="date" id="date" name="date" required/><br />
-                    <label for="profile">Selecione a foto do perfil: </label> <input type="file" name="profile" id="profile" required/><span class="erro" id="profileS"></span><br />
+                    <label for="profile">Selecione a foto do perfil: </label><br />
+
+                    <input type="file" name="profile" id="profile" required/><span class="erro" id="profileS"></span><br
+                    />
                     <span class="erro" id="agreeS"></span><br>
-                    <input type="checkbox" name="agree" id="agree" required/>
+                    <input type="checkbox" name="agree" id="agree" value="aceito" required/>
                     <label for="agree">Li e aceito todos os <a href="#">termos</a></label><br />
                     <input type="hidden" /><br />
                     <input type="submit" value="Cadastrar" id="env" class="btn btn-dark" onclick="return verificarForm();" />
@@ -50,5 +54,6 @@
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/sweetalert2.min.js"></script>
 <script src="js/meuJs.js"></script>
 </html>

@@ -19,7 +19,6 @@
                 echo "<script>alert('Usuário com caractere menor que 5');
                 history.back();
                 </script>";
-                exit();
             }else{
                 $this->usr=$u;
             }
@@ -32,7 +31,6 @@
                 echo "<script>alert('Senha com no minimo 8 caracteres');
                 history.back();
                 </script>";
-                exit();
             }else{
                 $this->pass=$p;
             } 
@@ -45,7 +43,6 @@
                 echo "<script>alert('Senha com no minimo 8 caracteres');
                 history.back();
                 </script>";
-                exit();
             }else{
                 $this->pass2=$p;
             }
@@ -54,32 +51,55 @@
             return $this->email;
         }
         public function setEmail($e){
-            $e = srttolower($e);
-            $this->email=$e;
+            if($e == ""){
+                echo "<script>alert('email vazio');
+                history.back();
+                </script>";
+            }else{
+                $this->email=strtolower($e);
+            }
         }
         public function getImage(){
             return $this->image;
         }
         public function setImage($i){
+            if($i['name'] == ""){
+                echo "<script>alert('imagem vazia'); history.back();</script>";
+            }else{
                 $this->image=$i;
+            }
+                
         }
         public function getDate(){
             return $this->date;
         }
         public function setDate($d){
-            $this->date=$d;
+            $ano = (int)date("Y"); //pega ano
+            $dataAno = (int)substr($d,0, 4);
+            $idade = $ano - $dataAno;
+            if($d == ""){
+                echo "<script>alert('data vazia');
+                    history.back();
+                </script>";
+            }else if($idade < 14){
+                echo "<script>alert('Idade com no minimo 15');
+                    history.back();
+                </script>";
+            }else{
+                $this->date=$d;
+            }
+            
         }
         public function getSexo(){
             return $this->sexo;
         }
         public function setSexo($s){
-            if($s != "M" || $s != "F"){
-                echo "<script>alert('Deu erro na imagem');
-                history.back();
-                </script>";
-                exit();
-            }else{
+            if($s == "M" || $s == "F"){
                 $this->sexo=$s;
+            }else{  
+                echo "<script>alert('Selecione um sexo');
+                </script>";
+
             }
         }
         //metodo para verificar senha
@@ -92,9 +112,9 @@
         }
         //metodo para criar o arquivo do ususario
         public function criarUser(){
-            if(!file_exists($this->usr)){
-                mkdir("../$this->usr",0777, true);
-                $arquivo = fopen("../$this->usr/$this->usr.txt","a");
+            if(!file_exists("../user/$this->usr")){
+                mkdir("../user/$this->usr",0777, true);
+                $arquivo = fopen("../user/$this->usr/$this->usr.txt","a");
                 fwrite($arquivo,"user: $this->usr\nsenha: $this->pass\nE-email: $this->email\ndata: $this->date\nsexo: $this->sexo");
                 fclose($arquivo);
                 return true;
@@ -119,7 +139,7 @@
                 default:
                     echo "Acho que nao tá no padrão.";
             }
-            move_uploaded_file($this->image['tmp_name'],"../$this->usr/$this->usr$ext");
+            move_uploaded_file($this->image['tmp_name'],"../user/$this->usr/$this->usr$ext");
         }
     }
 ?>
