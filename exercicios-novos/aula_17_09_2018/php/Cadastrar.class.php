@@ -19,6 +19,7 @@
                 echo "<script>alert('Usuário com caractere menor que 5');
                 history.back();
                 </script>";
+                exit();
             }else{
                 $this->usr=$u;
             }
@@ -31,6 +32,7 @@
                 echo "<script>alert('Senha com no minimo 8 caracteres');
                 history.back();
                 </script>";
+                exit();
             }else{
                 $this->pass=$p;
             } 
@@ -43,6 +45,7 @@
                 echo "<script>alert('Senha com no minimo 8 caracteres');
                 history.back();
                 </script>";
+                exit();
             }else{
                 $this->pass2=$p;
             }
@@ -55,6 +58,7 @@
                 echo "<script>alert('email vazio');
                 history.back();
                 </script>";
+                exit();
             }else{
                 $this->email=strtolower($e);
             }
@@ -65,6 +69,7 @@
         public function setImage($i){
             if($i['name'] == ""){
                 echo "<script>alert('imagem vazia'); history.back();</script>";
+                exit();
             }else{
                 $this->image=$i;
             }
@@ -81,10 +86,12 @@
                 echo "<script>alert('data vazia');
                     history.back();
                 </script>";
+                exit();
             }else if($idade < 14){
                 echo "<script>alert('Idade com no minimo 15');
                     history.back();
                 </script>";
+                exit();
             }else{
                 $this->date=$d;
             }
@@ -99,6 +106,7 @@
             }else{  
                 echo "<script>alert('Selecione um sexo');
                 </script>";
+                exit();
 
             }
         }
@@ -138,6 +146,7 @@
                     break;
                 default:
                     echo "Acho que nao tá no padrão.";
+                    exit();
             }
             move_uploaded_file($this->image['tmp_name'],"../user/$this->usr/$this->usr$ext");
         }

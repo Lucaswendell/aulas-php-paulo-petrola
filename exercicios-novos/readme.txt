@@ -1,0 +1,1 @@
+Esses exercícos são o novo modelo de atividades.

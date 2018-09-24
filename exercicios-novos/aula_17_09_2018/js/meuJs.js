@@ -16,11 +16,6 @@ function verificarForm(event){
         erro++;
     }else{
         document.getElementById("pass1S").innerHTML = ""; 
-
-    }
-    if(pass1 != pass2){
-        document.getElementById("pass2S").innerHTML = "Senhas diferentes";
-        erro++;
     }
     //usr
     if(urs == ""){
@@ -36,6 +31,8 @@ function verificarForm(event){
     if(!agree){
         document.getElementById("agreeS").innerHTML = "Aceite os termos";
         erro++;
+    }else{
+       document.getElementById("agreeS").innerHTML = "";
     }
     //sexo
     for(var i=0;i<sexo.length;i++){
@@ -47,11 +44,15 @@ function verificarForm(event){
     if(sexo2 == false){
         document.getElementById("sexoS").innerHTML = "Selecione o sexo";
         erro++;
+    }else{
+        document.getElementById("sexoS").innerHTML = "";
     }
     //data
     if(date == ""){
         document.getElementById("dateS").innerHTML = "Selecione a sua data de nacimento";
         erro++;
+    }else{
+        document.getElementById("dateS").innerHTML = "";
     }
     //email
     if(email == ""){
