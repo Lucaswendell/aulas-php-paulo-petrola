@@ -31,7 +31,8 @@
                 Lado Cliente:
                     As informações ficam armazenadas no browser do usuário em espaços de memórias especiais chamados de COOKIES.
                     Os COOKIES podem ser manipulados livrimente pelo browser e até mesmo por JS, por isso a prática do uso de cookies não é muito efetiva para informações sensíveis como documentos, senhas, etc;
-                
-    
+                    ex:
+                        setcookie("nome",valor,tempoDeVida);  
 */ 
+            
 ?>
