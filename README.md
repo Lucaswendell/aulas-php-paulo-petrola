@@ -1,1 +1,13 @@
-éZ±ç±z·Š‹5ãı<ÿm5ğIí­§ZuçZv‹'¢˜iÛOôóı´×Ä^ªè¬Š‡^jº®Šú&jx©ºV¨uæ«ªè¯¢ÇŠ·­®*,Óô÷ı´×Å)–†uæ«ªè¯£N?ÓßöÓ_ÅêÜr*¢k©–†uæ«ªè¯£]?ÓßöÓ_®'§µª9¸Ş¶‹¢cÇ?]ÓßöÓ_ÅêÜr*¢c«‰éíj†n7­¢Í{ÿOÛM|«qÈ¨r‰­¡Ú,¢Ç(×¢Ëâ²Ú,jÖ ¢¶µóı=ÿm5ğÆ§Š›¥j‡^JÚâ¸ÿOÛM|1©â¦éZ¡×€®¶²z)í®‡n¡§Zv‹)z¹šéízÍ¹ÿOÛM|œr*¢gZv‹)z¹šéízÀâk^ÿÓßöÓ_"š™Zµª¢z/¢jzZyì^­Ç"¢
+# Aulas e exercÃ­cios
+- 14/08/2018 -> Entrada de dados no php
+- 20/08/2018 -> RequisiÃ§Ã£o de arquivo, manipulaÃ§Ã£o de arquivos e diretÃ³rios
+- 03/09/2018 -> Upload de arquivo
+- 04/09/2018 -> ExercÃ­cio com upload de arquivo
+- 10/09/2018 -> OrientaÃ§Ã£o a Objetos com PHP
+- 11/09/2018 -> ExercÃ­cio com OrientaÃ§Ã£o a Objetos
+- 17/09/2018 -> ExercÃ­cio com todos os conteÃºdos vistos atÃ© agora
+- 18/09/2018 -> ManipulaÃ§Ã£o de String 
+- 24/09/2018 -> ManipulaÃ§Ã£o de Array e introduÃ§Ã£o a dados permanentes 
+- 25/09/2018 -> ExecÃ­cio com dados permanentes
+
+**_Dia 17/09/2018 implataÃ§Ã£o do novo modelo de exercÃ­cios_**
