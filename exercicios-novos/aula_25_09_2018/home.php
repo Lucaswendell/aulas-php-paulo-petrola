@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="css/styles.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">';
         echo '
-        <nav >
+        <nav>
                 <ul id="q">
                 <li><a href="#">Usuario</a></li>
                 <li><a href="#">Home</a></li>
