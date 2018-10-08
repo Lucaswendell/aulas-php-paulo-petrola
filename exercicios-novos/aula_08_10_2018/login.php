@@ -1,6 +1,5 @@
 <?php
-echo
-    "
+echo "
 <form action=\"proclogin.php?logar=log\" method=\"post\">
 <fieldset style=\"width: 400px; margin: 0 auto;\">
 <legend>Login</legend>

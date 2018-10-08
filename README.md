@@ -9,5 +9,7 @@
 - 18/09/2018 -> Manipulação de String 
 - 24/09/2018 -> Manipulação de Array e introdução a dados permanentes 
 - 25/09/2018 -> Execício com dados permanentes
+- 08/10/2018 -> Continuação de dados permanentes e correção do exercício da aula 25/09/2018, exercício sobre sessão
+
 
 **_Dia 17/09/2018 implatação do novo modelo de exercícios_**

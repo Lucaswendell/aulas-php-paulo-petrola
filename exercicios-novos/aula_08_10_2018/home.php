@@ -1,5 +1,5 @@
 <?php
-if (isset($_COOKIE["admin"]) && $_COOKIE["admin"] == "logado") {
+if (isset($_SESSION["admin"]) && $_SESSION["admin"] == "logado") {
     echo "<link rel=\"stylesheet\" href=\"css/slicknav.css\" />
         <link rel=\"stylesheet\" href=\"css/styles.css\" />
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
