@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+session_start();
 if (isset($_SESSION['admin']) && $_SESSION['admin'] == "logado") {
     require_once('home.php');
 } else {
