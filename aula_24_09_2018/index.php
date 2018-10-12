@@ -5,16 +5,16 @@
         Criação de array associativo -> $array = array("chave" => elemento, "outra" => valor)
         Matrizes
         métodos:
-            array_push
-            array_pop
-            array_shift
-            array_unshift
-            array_reverse
-            array_merge
-            array_count
-            in_array
-            sort
-            asort
+            array_push -> adiciona um valor no ultimo indice
+            array_pop -> remove um valor do ultimo indice
+            array_shift -> remove um valor no primeiro indice
+            array_unshift  -> adiciona um valor no primeiro indice 
+            array_reverse -> retorna um array com os elementos em forma reversa
+            array_merge -> junta um array
+            count -> retorna o total de elementos em um array
+            in_array -> checa se um valor existe em um array
+            sort -> 
+            asort ->
             rsort
             arsort
         $associativo = array(2,5,8,7,10,2,0,1,4,0,5,2,0,2);

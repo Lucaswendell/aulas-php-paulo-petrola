@@ -8,8 +8,7 @@
         $_FILE -> RECEBE E MANIPULA INFORMAÇÕES BINÁRIAS DE FORMULARIO
         $_COOKIE -> MANIPULA COOKIE NO BROWSER
         $_SESSION -> MANIPULA SESSÃO NO SERVIDOR 
+    
  */
-
- // $variavel = (condição) ? if : else
- 
-?>  
+ // $variavel = (condição) ? if : else 
+?> 
