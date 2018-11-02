@@ -31,7 +31,7 @@
     echo 
     '
     <form action="login.php" method="post">
-        <label for="usr">User:</label> <input type="text" required name="usr" id="usr" />
+        <label for="usr">User:</label><input type="text" required name="usr" id="usr" />
         <br /> 
         <br />
         <label for="password">Password:</label> <input type="password" name="password" id="password" required/>

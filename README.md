@@ -11,6 +11,6 @@
 - 25/09/2018 -> Execício com dados permanentes
 - 08/10/2018 -> Continuação de dados permanentes e correção do exercício da aula 25/09/2018, exercício sobre sessão
 - 09/10/2018 -> revisão
-
+- 30/10/2018 -> introdução a PDO e criação da classe conexão
 
 **_Dia 17/09/2018 implatação do novo modelo de exercícios_**

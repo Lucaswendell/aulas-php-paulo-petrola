@@ -1,6 +1,8 @@
 <?php
-
-    $valores = array("valor1","valor2","valor3","valor4","valor5");
+    $valores = array();
+    for($i=0;$i<5;$i++){
+        array_push($valores,rand(0,10));
+    }
     for($i=0;$i<5;$i++){
         if($i % 2 == 0){
             array_pop($valores);

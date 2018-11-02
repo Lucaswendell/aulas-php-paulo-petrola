@@ -1,1 +1,1 @@
-Esses exercícos são o novo modelo de atividades.
+17/09 -> Esses exercícos são o novo modelo de atividades.

@@ -1,4 +1,6 @@
 <?php
+#echo ("codigo iniciado...");
+#goto saindo;
 /* 
 requisição de arquivos
     include -> método sem retorno, recebe um argumento(arquivo), não gera erro fatal, gera um WARNING(avisa)
@@ -8,15 +10,15 @@ requisição de arquivos
     include_once -> o mesmo que o include, mas ele verifica se o arquivo já foi chamado
     ex:
         include_once("arquivo");
-    ** se colocar o include antes do include_once, o arquivo não é requisitado novamente
-    ** se colocar o include_once antes do include, o include requisita o arquivo novamente
+ ** se colocar o include antes do include_once, o arquivo não é requisitado novamente
+ ** se colocar o include_once antes do include, o include requisita o arquivo novamente
     require -> método sem retorno, faz requisições de arquivo, recebe um argumento(Arquivo), gera um erro fatal, ou seja, irá parar a aplicação
     ex:
         require("arquivo");
     require_once -> mesmo que o require, mas verifica se o arquivo já foi requisitado. Também gera um erro fatal
     ex:
         require_once("arquivo");
-**********************************************************************************************    
+ **********************************************************************************************    
 Manipulação de arquivos e diretórios
         file_exists -> verifica a existência de um arquivo ou diretório, retorno booleano, argumento(arquivo ou diretório que deseja-se verificar)
         ex: 
@@ -35,7 +37,7 @@ Manipulação de arquivos e diretórios
                 r -> read-> modo leitura
                 w -> write-> modo escrita, mas irá resetar o arquivo, caso nao exista ele irá criar
                 a -> apend-> anexo, conteudo antigo, caso exita, nao vai ser apagado, ou seja, ele ira pula uma linha e colocar o conteúdo
-            *armazena o arquivo dentro de uma variavel, essa variavel sera chamada de ponteiro
+ *armazena o arquivo dentro de uma variavel, essa variavel sera chamada de ponteiro
  exercicio: 
     criar a estrutura basica da aplicação web caso não exista
         fwrite -> escreve no arquivo, recebe dois argumentos o arquivo que ira ser inserido o texto e o segundo sera o conteudo, só execulta se estiver um fopen.
@@ -45,7 +47,15 @@ Manipulação de arquivos e diretórios
             ex:
                 fclose($arquivo);
  */
-$arquivo = fopen("teste2.txt","w");
-fwrite($arquivo, "I <3 \n info");
+#echo ("codigo execultado");
+#echo ("arquivo");
+$arquivo = fopen("teste2.txt", "r");
+//fwrite($arquivo, "I <3  info\n");
+$leitura = fread($arquivo, filesize("teste2.txt"));
 fclose($arquivo);
+echo $leitura;
+#saindo :
+#   echo ("<br/> saindo");
+
+
 ?>

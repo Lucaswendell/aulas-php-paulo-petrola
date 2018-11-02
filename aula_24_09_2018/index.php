@@ -13,10 +13,10 @@
             array_merge -> junta um array
             count -> retorna o total de elementos em um array
             in_array -> checa se um valor existe em um array
-            sort -> 
-            asort ->
-            rsort
-            arsort
+            sort -> retorna um array em ordem crescente
+            asort -> ordena um valor manteno a associa
+            rsort -> ordem reversa
+            arsort -> ordena os valores na ordem inversa, mas mantem a associação de indices 
         $associativo = array(2,5,8,7,10,2,0,1,4,0,5,2,0,2);
         array_push($associativo,"valor");
         array_pop($associativo);
@@ -34,5 +34,8 @@
                     ex:
                         setcookie("nome",valor,tempoDeVida);  
 */ 
-            
+$array = array("chave9" => 9,"chave10" => 10,"chave8" => 8, "chave9.2" => 9,"chave1" => 1);
+$array2 = array(2,11,18,19,20);
+$array3 = array_merge($array, $array2);
+var_dump($array3);
 ?>
