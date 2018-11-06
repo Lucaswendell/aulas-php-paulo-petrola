@@ -1,0 +1,32 @@
+html{
+    background-color: #258;
+    color: #fff;
+}
+#form{
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 8vw;
+    margin-bottom: auto;
+}
+input[type=text]{
+    border: none;
+    background: none;
+    border-bottom: 2px solid #fff;
+    padding: 10px;
+    width: 100%;
+}
+input[type=submit]{
+    border: none;
+    margin: 0 auto;
+    padding: 20px;
+    background: none;
+    border: 2px solid #fff;
+    transition: all 0.5s;
+    width: 100%;
+}
+input[type=submit]:hover{
+    color: #111;
+    border: 2px solid #111;
+    
+}

@@ -56,18 +56,33 @@ final class Conexao{
       try{
         if(file_exists("confi/{$config}")){
           $arquivo = parse_ini_file("confi/{$config}"); //armazena o conteudo do arquivo como um array associativo
+          //preenche os atributos
           $this->setHost($arquivo['host']);
           $this->setUser($arquivo['user']);
-          $this->setPwd($arquivo['pwd']);
+          $this->setPwd($arquivo['pass']);
           $this->setType($arquivo['type']);
           $this->setDb($arquivo['name']);
           if($this->verificar()){
-            //código
+            //pega o tipo de conexão
+            switch($this->getType()){
+                case "mysql":
+                    try{
+                        //faz a conexao com o objeto da API PDO, com mysql
+                        $this->setConexao(new PDO("mysql:host={$this->getHost()};dbname={$this->getDb()}","{$this->getUser()}", "{$this->getPwd()}", array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')));
+                    }catch(PDOException $e){
+                        echo "Erro: ".$e->getMessage();
+                    }
+                    $this->getConexao()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //modifica um atributo da API, vai fazer com que o PDO trabalhe os erros como exception
+                    $this->getConexao()->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); //mofica para que os modos das consutas seja com objetos
+                    break;
+                default:
+                    throw new Exception("SGBD não suportado");
+            }
           }else{
             throw new Exception("Sem informações necessárias");
           }
         }else{
-          //cria uma exeção da propria aplicação
+          //cria uma exeção da própria aplicação
           throw new Exception("Arquivo não encontrado");
         }
       }catch(Exception $e){
@@ -79,7 +94,10 @@ final class Conexao{
     }
     //fecha a conexao
     public function __destruct(){
-      $this->setConexao(null);
+      $this->fecharConexao();
+    }
+    private function fecharConexao(){
+        $this->setConexao(null);
     }
 }
 ?>
