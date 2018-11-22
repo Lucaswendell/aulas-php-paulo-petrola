@@ -54,8 +54,8 @@ final class Conexao{
     //abre a conexao com o banco
     public function __construct($config){
       try{
-        if(file_exists("confi/{$config}")){
-          $arquivo = parse_ini_file("confi/{$config}"); //armazena o conteudo do arquivo como um array associativo
+        if(file_exists("{$config}")){
+          $arquivo = parse_ini_file("{$config}"); //armazena o conteudo do arquivo como um array associativo
           //preenche os atributos
           $this->setHost($arquivo['host']);
           $this->setUser($arquivo['user']);

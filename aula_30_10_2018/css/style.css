@@ -1,6 +1,26 @@
 html{
     background-color: #258;
     color: #fff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+#id{
+    border: none;
+    cursor: no-drop;
+    animation-name: teste;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: all 3s;
+    text-align: center;
+    font-size: 20px;
+    height:20px;
+    width: 20px;
+    border-radius: 50% 50%;
+}
+@keyframes teste{
+    50%{
+        background-color: #f05353;
+    }
 }
 #form{
     position: relative;
@@ -9,15 +29,39 @@ html{
     margin-top: 8vw;
     margin-bottom: auto;
 }
+#formP{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 8vw;
+    margin-bottom: auto;
+}
 input[type=text]{
+    color: #fff;
     border: none;
     background: none;
     border-bottom: 2px solid #fff;
     padding: 10px;
-    width: 100%;
+    width: 100%
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    
+}
+a:hover{
+    text-decoration: underline;
+}
+.enviar{
+    text-decoration: none;
+    color: #fff;
+}
+.enviar:hover{
+    text-decoration: underline;
+    text-decoration-color: #fff; 
 }
 input[type=submit]{
     border: none;
+    color: #fff;
     margin: 0 auto;
     padding: 20px;
     background: none;
@@ -25,8 +69,16 @@ input[type=submit]{
     transition: all 0.5s;
     width: 100%;
 }
+
 input[type=submit]:hover{
     color: #111;
     border: 2px solid #111;
     
+}
+tr td, th{
+    text-align: center;
+    padding: 10px;
+}
+tr td{
+    background-color: #f58;
 }

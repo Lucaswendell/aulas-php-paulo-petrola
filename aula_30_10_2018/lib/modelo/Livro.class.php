@@ -6,17 +6,28 @@
         private $tema;
         //encapsulamento
         public function setTitulo($t){
-            $this->titulo = (isset($t)) ? addslashes($t) : NULL;
+            $this->titulo = ($t != NULL) ? addslashes($t) : NULL;
         }
         public function setId($id){
-            $this->id = (isset($id)) ? addslashes($id) : NULL;
+            $this->id = ($id != NULL) ? addslashes($id) : NULL;
         }
         public function setPaginas($p){
-            $this->paginas = (isset($p)) ? addslashes($p) : NULL;
+            $this->paginas = ($p != NULL) ? addslashes($p) : NULL;
         }
         public function setTema($tema){
-            $this->tema = (isset($tema)) ? addslashes($tema) : NULL;
+            $this->tema = ($tema != NULL) ? addslashes($tema) : NULL;
+        }
+        public function getTema(){
+            return $this->tema;
+        }
+        public function getId(){
+            return $this->id;
+        }
+        public function getPaginas(){
+            return $this->paginas;
+        }
+        public function getTitulo(){
+            return $this->titulo;
         }
     } 
-
 ?>
