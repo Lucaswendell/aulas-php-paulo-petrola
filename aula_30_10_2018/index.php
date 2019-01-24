@@ -14,8 +14,7 @@
             echo "<script>alert(\"{$_SESSION['erro']}\")</script>";
             session_destroy();
         }
-        require_once("lib/controle/LivroControle.class.php");
-        $comando = new ControleLivro();
+        
     ?>
     <div id="form">
         <form action="processa.php" method="post">

@@ -1,4 +1,5 @@
 <?php
+    date_timezone_set("America/Fortaleza");
     if($_GET['adicionar'] == "sim"){
         $dia = date("d");
         $mes = date("m");
@@ -16,4 +17,5 @@
             header("Location: aula_".$dia."_".$mes."_".$ano);
         }
     }
+    date_timezone_s
 ?>

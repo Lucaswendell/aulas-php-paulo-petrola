@@ -29,7 +29,7 @@
                     continue;
                 }else{
                     echo "
-                    <tr><td><a href=\"$ler\" class=\"uk-button uk-button-text\">$ler<td></tr>";
+                    <tr><td><a href=\"$ler\" class=\"uk-button uk-button-text\">$ler</a><td></tr>";
                 }
             }   
         ?>
@@ -43,7 +43,7 @@
 </body>
 <script src="js/uikit.min.js"></script>
 <?php 
-    if($_COOKIE['erro']){
+    if(isset($_COOKIE['erro'])){
         echo "
 <script>
     UIkit.modal(\"aula já existe\");
